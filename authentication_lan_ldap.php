@@ -59,7 +59,7 @@
 
     <div style="width:40%" class="container">
       <H1> CONTAINER AUTH LDAP </H1>
-      <form class="form-signin" method="post" action="./authentication.php">
+      <form class="form-signin" method="post" action="./authentication_lan_ldap.php">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputEmail" class="sr-only">User</label>
         <input type="input" name="user" id="inputEmail" class="form-control" placeholder="User" required autofocus>
