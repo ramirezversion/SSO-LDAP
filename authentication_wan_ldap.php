@@ -7,14 +7,19 @@
         $password=$_POST['password'];
 
         //LDAP SETUP CONFIGURATION
-        $host= 'docker.ugr.es';
-        $port= 30222; //LDAP port 389// SSL: 636
+        //$host= 'docker.ugr.es';
+        //$port= 30223; //LDAP port 389// SSL: 636
         $dn="cn=admin,dc=mpcs,dc=local"; //change your DN
         $pwd_admin="P@ssw0rd"; // your admin password
 
-        //$conn = ldap_connect( "ldap://".$host,$port) ;
-        $conn = ldap_connect($host,$port) ;
+        //$conn = ldap_connect( "ldaps://".$host,$port) ;
+        //$conn = ldap_connect($host,$port) ;
 
+        $ldaphost = "ldap://docker.ugr.es:30222";
+        // Conexión al servidor LDAP
+        $conn = ldap_connect($ldaphost)
+          or die("Could not connect to {$ldaphost}");
+    
         ldap_set_option($conn, LDAP_OPT_PROTOCOL_VERSION, 3);        
 
         //Matching DN admin and password
@@ -59,7 +64,7 @@
 
     <div style="width:40%" class="container">
       <H1> CONTAINER AUTH LDAP </H1>
-      <form class="form-signin" method="post" action="./authentication_wan_ldap.php">
+      <form class="form-signin" method="post" action="./authentication_wan_ldaps.php">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputEmail" class="sr-only">User</label>
         <input type="input" name="user" id="inputEmail" class="form-control" placeholder="User" required autofocus>
