@@ -12,8 +12,8 @@
         $dn="cn=admin,dc=mpcs,dc=local"; //change your DN
         $pwd_admin="P@ssw0rd"; // your admin password
 
-        $conn = ldap_connect( "ldap://".$host,$port) ;
-
+        //$conn = ldap_connect( "ldap://".$host,$port) ;
+        $conn = ldap_connect($host,$port) ;
 
         ldap_set_option($conn, LDAP_OPT_PROTOCOL_VERSION, 3);        
 
