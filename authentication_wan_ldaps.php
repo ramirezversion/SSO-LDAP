@@ -13,8 +13,13 @@
         $pwd_admin="P@ssw0rd"; // your admin password
 
         //$conn = ldap_connect( "ldaps://".$host,$port) ;
-        $conn = ldap_connect($host,$port) ;
+        //$conn = ldap_connect($host,$port) ;
 
+        $ldaphost = "ldaps://docker.ugr.es:30223";
+        // Conexión al servidor LDAP
+        $conn = ldap_connect($ldaphost)
+          or die("Could not connect to {$ldaphost}");
+    
         ldap_set_option($conn, LDAP_OPT_PROTOCOL_VERSION, 3);        
 
         //Matching DN admin and password
