@@ -15,7 +15,6 @@
         //$conn = ldap_connect( "ldap://".$host,$port) ;
         $conn = ldap_connect($host,$port) ;
 
-
         ldap_set_option($conn, LDAP_OPT_PROTOCOL_VERSION, 3);        
 
         //Matching DN admin and password
