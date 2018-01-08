@@ -7,8 +7,8 @@
         $password=$_POST['password'];
 
         //LDAP SETUP CONFIGURATION
-        $host= 'docker.ugr.es';
-        $port= 30223; //LDAP port 389// SSL: 636
+        //$host= 'docker.ugr.es';
+        //$port= 30223; //LDAP port 389// SSL: 636
         $dn="cn=admin,dc=mpcs,dc=local"; //change your DN
         $pwd_admin="P@ssw0rd"; // your admin password
 
